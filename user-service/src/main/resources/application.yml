@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/testdb
+    username: root
+    password: dung2309
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
