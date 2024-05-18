@@ -3,14 +3,11 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/testdb
+    url: jdbc:mysql://monorail.proxy.rlwy.net:57860/railway
     username: root
-    password: dung2309
+    password: PsGEJivjqPXqFuHHzfNXbunvcRoIfKOD
     driverClassName: com.mysql.cj.jdbc.Driver
 
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
   config:
     import: "optional:configserver:http://localhost:8888"
 
