@@ -5,8 +5,3 @@ spring:
   config:
     import: "optional:configserver:http://localhost:8888"
 
-springdoc:
-  swagger-ui:
-    urls:
-      - name: User Service
-        url: http://user-service/v3/api-doc
