@@ -11,6 +11,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+
   config:
     import: "optional:configserver:http://localhost:8888"
 
