@@ -26,11 +26,18 @@ public class User {
     private String name;
 
     @NotBlank
+    String password;
+
+    @NotBlank
     @Email
     private String email;
 
-    public User(String name, String email) {
+    private String role;
+
+    public User(String name, String email, String password, String role) {
         this.name = name;
+        this.role = role;
+        this.password = password;
         this.email = email;
     }
 }

@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.userservice.entity.User;
 import org.userservice.repository.UserRepository;
 
@@ -22,12 +23,12 @@ public class UserServiceApplication {
     CommandLineRunner initData(UserRepository userRepository) {
         return args -> {
             List<User> users = List.of(
-                    new User("John Doe", "email@gmail.com"),
-                    new User("Jane Doe", "email@gmail.com")
+                    new User("John Doe", "email@gmail.com", BCrypt.hashpw("password", BCrypt.gensalt()), "USER")
             );
 
             userRepository.saveAll(users);
         };
     }
+
 
 }

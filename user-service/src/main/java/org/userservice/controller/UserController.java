@@ -2,6 +2,7 @@ package org.userservice.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.userservice.dto.UserDto;
@@ -15,6 +16,14 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
+
+    @Value("${server.port}")
+    String port;
+
+    @GetMapping("/port")
+    public String getPort() {
+        return "User service is running on port: " + port;
+    }
 
     @GetMapping
     public List<UserDto> findAll() {

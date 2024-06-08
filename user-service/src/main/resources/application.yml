@@ -1,17 +1,8 @@
 spring:
   application:
     name: user-service
-
-  datasource:
-    url: jdbc:mysql://monorail.proxy.rlwy.net:57860/railway
-    username: root
-    password: PsGEJivjqPXqFuHHzfNXbunvcRoIfKOD
-    driverClassName: com.mysql.cj.jdbc.Driver
-
   config:
     import: "optional:configserver:http://localhost:8888"
-
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
+  profiles:
+    active: dev
 
